@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    SupplierName : <input type="text" [(ngModel)]="SupplierCurrent.SupplierName" value="" /> <br />
+    SupplierCode : <input type="text" [(ngModel)]="SupplierCurrent.SupplierCode" value="" /> <br />
+    SupplierAmount : <input type="text" [(ngModel)]="SupplierCurrent.SupplierAmount" value="" /> <br />
+    <p></p>
+    <input type="button" [disabled]="!(SupplierCurrent.validate())" name="name" value="Add" (click)="Add()" />
+    <p></p>
+    {{SupplierCurrent.SupplierName}} <br />
+    {{SupplierCurrent.SupplierCode}} <br />
+    {{SupplierCurrent.SupplierAmount}} <br />
+
+    <table border="1"style="border-style:groove">
+        <tr>
+            <td>Supplier Name</td>
+            <td>Supplier Code</td>
+            <td>Supplier Amount</td>
+        </tr>
+        <tr *ngFor="let supp of Suppliers">
+            <td> {{supp.SupplierName}}</td>
+            <td>{{supp.SupplierCode}}</td>
+            <td>{{supp.SupplierAmount}}</td>
+            <td><a href="#" (click)="Select(supp)">Select</a></td>
+        </tr>
+
+    </table>
+</body>
+</html>

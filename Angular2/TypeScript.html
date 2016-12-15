@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <script src="system.js"></script>
+    <script>
+        System.config({
+            "defaultJSExtensions": true
+        });
+       // alert('test');
+        System.import("Customer.js").
+            then(function (exports) {
+                try {
+                    var cust = new exports.customer();
+                    cust.CustomerCode = "Sudheer"
+                    alert(cust.CustomerCode);
+                }
+                catch (e) {
+                    alert(e);
+                }
+            });
+        //try {
+        //    var cust = new customer();
+        //    //cust.CustomerCode = "";
+        //    cust.CustomerCode = "xxxx";
+        //    alert(cust.CustomerCode);
+        //}
+        //catch (ex) {
+        //    alert(ex)
+        //}
+    </script>
+</body>
+</html>

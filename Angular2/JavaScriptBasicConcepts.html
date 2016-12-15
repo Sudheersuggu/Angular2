@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        // 3 Data types - String, Number and Boolean
+        //2. Scope - Page and Function scope
+        //3- Undefined
+        //4. Hoisting
+        //5. Literal or Function
+        //6. closure abstraction and encapsulation
+        //7. IIFE - Immediatly invoked function and expression
+        //8. Declaration
+        //9. I nheritance and classes (Function)
+
+        var x;
+        alert(x); //undefined
+
+        function Hoisting() {
+            alert(t);  //<-- Undefined
+            if (1 == 1) {
+                var t = 10;
+            }
+        }
+
+        (function () {
+            var x = 10;
+            alert(x);
+        })(x);
+
+        function fun1() {
+            x++;
+        }
+
+        function Customer() {
+            var t = 10;
+            //private encapsulation
+            var _CustomerName = "";//private Variable
+            var _setCustomerName = function (value) { //private
+                if (value == undefined) {
+                    throw "customer name is required";
+                }
+                _CustomerName = value;
+            }
+
+            var _validate = function () {
+                alert(this._CustomerName);
+            }
+
+            var _createConnection = function () {
+                //
+            }
+
+            //private
+            //abstraction show what is necessar
+            return {
+                setCustomerName: _setCustomerName, //Public
+                Validate: _validate
+            }
+        
+            //this.customerName = "Sudheer";
+            //this.customerCode = "1234";
+            //this.Validate = function () {
+            //    alert("Parent Customer");
+            //}
+        }
+
+        function ChildCustomer() {
+            this.Validate = function () {
+                alert("Child Customer");
+            }
+        }
+
+        var cust = new Customer();
+        cust.setCustomerName("test");
+        cust.Validate();
+
+        ChildCustomer.prototype = new Customer();
+        cust = new ChildCustomer();
+        cust.Validate();
+
+      
+
+
+    </script>
+</body>
+</html>
