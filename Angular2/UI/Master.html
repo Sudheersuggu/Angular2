@@ -1,0 +1,16 @@
+﻿<script>
+    var i = 0;
+    alert(i++ + "Loaded");
+</script>
+<table>
+    <tr>
+        <td>LOGO</td>
+        <td><a [routerLink]="['Customer']">Customer</a></td>
+        <td><a [routerLink]="['Supplier']">Supplier</a></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <router-outlet></router-outlet>
+        </td>
+    </tr>
+</table>

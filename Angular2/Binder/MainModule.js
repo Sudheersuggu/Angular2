@@ -12,14 +12,20 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var SupplierComponent_1 = require("../Binder/SupplierComponent");
 var forms_1 = require("@angular/forms");
+var http_1 = require("@angular/http");
+var GridsComponent_1 = require("../Binder/GridsComponent");
+var Routing_1 = require("../Binder/Routing");
+var router_1 = require("@angular/router");
+var CustomerComponent_1 = require("../Binder/CustomerComponent");
+var MasterComponent_1 = require("../Binder/MasterComponent");
 var MainModule = (function () {
     function MainModule() {
     }
     MainModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [SupplierComponent_1.SupplierComponent],
-            bootstrap: [SupplierComponent_1.SupplierComponent]
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, router_1.RouterModule.forRoot(Routing_1.ApplicationRoutes)],
+            declarations: [SupplierComponent_1.SupplierComponent, GridsComponent_1.GridComponent, CustomerComponent_1.CustomerComponent, MasterComponent_1.MasterComponent],
+            bootstrap: [MasterComponent_1.MasterComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], MainModule);
